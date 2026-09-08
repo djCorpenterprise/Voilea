@@ -6,8 +6,8 @@ export default function Home() {
     <div className="topbar">RESEARCH USE ONLY <span>•</span> NOT FOR HUMAN OR VETERINARY USE</div>
     <header className="site-header wrap"><a className="brand" href="/">VOIÉLA</a><nav className="links"><a href="/shop">Shop</a><a href="/about">About</a><a href="/faq">FAQ</a><a href="/checkout">Cart</a></nav></header>
     <main>
-      <section className="hero-image-section">
-        <img className="hero-image" src="/images/hero.webp" alt="VOIÉLA research materials collection" />
+      <section className="hero-image-section" style={{ width: '100%', overflow: 'hidden', background: '#e8e1d8' }}>
+        <img className="hero-image" src="/images/hero.png" alt="VOIÉLA research materials collection" style={{ display: 'block', width: '100%', height: 'auto' }} />
       </section>
 
       <section className="compliance wrap"><div><strong>01</strong><span>Research use only</span></div><div><strong>02</strong><span>Clear specifications</span></div><div><strong>03</strong><span>No personal-use guidance</span></div></section>
