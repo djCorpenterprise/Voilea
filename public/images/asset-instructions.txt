@@ -1,0 +1,1 @@
+Copy the supplied editorial assets into public/images/ before running the site.
