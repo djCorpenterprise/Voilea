@@ -1,0 +1,1 @@
+Place the VOIÉLA editorial image assets from voiela-editorial-assets.zip in this folder.
