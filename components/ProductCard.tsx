@@ -12,11 +12,11 @@ type ProductCardProps = {
 }
 
 const imageByProduct: Record<string, string> = {
-  'RT-3-10': '/images/rt3-10.webp',
-  'TRZ-2-10': '/images/trz2-10.webp',
-  'NAD-1-500': '/images/nad1.webp',
-  'GHK-1-50': '/images/ghk1.webp',
-  'GV-1': '/images/gv1.webp',
+  'RT-3-10': '/images/rt3-10.png',
+  'TRZ-2-10': '/images/trz2-10.png',
+  'NAD-1-500': '/images/nad1.png',
+  'GHK-1-50': '/images/ghk1.png',
+  'GV-1': '/images/gv1.png',
 }
 
 export default function ProductCard({ name, category, productId, contents, price }: ProductCardProps) {
@@ -27,7 +27,7 @@ export default function ProductCard({ name, category, productId, contents, price
     <div className="product-card">
       <a href={`/products/${productId}`} className="product-visual product-photo" aria-label={`View ${name}`}>
         {image && !imageError ? (
-          <img src={image} alt={`${name} ${contents} research material`} onError={() => setImageError(true)} />
+          <img src={image} alt={`${name} ${contents} research material`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={() => setImageError(true)} />
         ) : (
           <div className="vial-art" aria-hidden="true">
             <div className="vial-cap" />
