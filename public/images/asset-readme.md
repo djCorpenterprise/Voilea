@@ -1,0 +1,1 @@
+VOIÉLA editorial imagery is provided as a local asset package.
