@@ -1,11 +1,11 @@
 import { products } from '@/lib/products'
 
 const imageByProduct: Record<string, string> = {
-  'RT-3-10': '/images/rt3-10.webp',
-  'TRZ-2-10': '/images/trz2-10.webp',
-  'NAD-1-500': '/images/nad1.webp',
-  'GHK-1-50': '/images/ghk1.webp',
-  'GV-1': '/images/gv1.webp',
+  'RT-3-10': '/images/rt3-10.png',
+  'TRZ-2-10': '/images/trz2-10.png',
+  'NAD-1-500': '/images/nad1.png',
+  'GHK-1-50': '/images/ghk1.png',
+  'GV-1': '/images/gv1.png',
 }
 
 export default async function Product({ params }: { params: Promise<{ slug: string }> }) {
@@ -20,7 +20,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
     <main className="wrap product-page">
       <div className="product-detail">
         <div className="product-visual product-photo detail-visual">
-          {image ? <img src={image} alt={`${product.name} ${product.contents} research material`} /> : <div className="vial-art" aria-hidden="true"><div className="vial-cap"/><div className="vial-body"><div className="vial-label"><span>VOIÉLA</span><strong>{product.id}</strong><small>RESEARCH USE ONLY</small></div></div></div>}
+          {image ? <img src={image} alt={`${product.name} ${product.contents} research material`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <div className="vial-art" aria-hidden="true"><div className="vial-cap"/><div className="vial-body"><div className="vial-label"><span>VOIÉLA</span><strong>{product.id}</strong><small>RESEARCH USE ONLY</small></div></div></div>}
           <small className="visual-ruo">RUO</small>
         </div>
         <div className="product-info">
