@@ -13,21 +13,31 @@ const productImages: Record<string, string> = {
   'GV-1': '/images/gv1.png',
 }
 
+const displayCodeByProduct: Record<string, string> = {
+  'RT-3-10': 'GLP-3',
+  'TRZ-2-10': 'TZ-2',
+  'NAD-1-500': 'NAD-1',
+  'GHK-1-50': 'GHK-1',
+  'GV-1': 'GV-1',
+}
+
 export default function ProductCard({ name, category, productId, contents, price, variants }: ProductCardProps) {
   const [selectedId, setSelectedId] = useState(productId)
   const hasVariants = Boolean(variants && variants.length > 1)
   const selected = useMemo(() => variants?.find((variant) => variant.id === selectedId) ?? { id: productId, contents, price }, [variants, selectedId, productId, contents, price])
   const image = productImages[selected.id] ?? productImages[productId]
+  const displayCode = displayCodeByProduct[selected.id] ?? displayCodeByProduct[productId] ?? selected.id
 
   return (
     <article className="product-card">
-      <a href={`/products/${selected.id}`} className="product-visual editorial-visual" aria-label={`View ${name}`}>
-        <img src={image} alt={`${name} research material`} className="product-editorial-image" />
+      <a href={`/products/${selected.id}`} className="product-visual editorial-visual" aria-label={`View ${displayCode} — ${name}`}>
+        <img src={image} alt={`${displayCode} — ${name} research material`} className="product-editorial-image" />
         <small className="visual-ruo">RUO</small>
       </a>
       <div className="product-meta">
         <div className="product-copy">
-          <h3>{name}</h3>
+          <h3>{displayCode}</h3>
+          <p className="product-name-card">{name}</p>
           <p>{category}</p>
           {hasVariants ? (
             <label className="size-select-label">
