@@ -2,21 +2,8 @@
 
 import { useMemo, useState } from 'react'
 
-type Variant = {
-  id: string
-  contents: string
-  price: number
-}
-
-type ProductCardProps = {
-  name: string
-  category: string
-  visualIndex: number
-  productId: string
-  contents: string
-  price: number
-  variants?: Variant[]
-}
+type Variant = { id: string; contents: string; price: number }
+type ProductCardProps = { name: string; category: string; visualIndex: number; productId: string; contents: string; price: number; variants?: Variant[] }
 
 const productImages: Record<string, string> = {
   'RT-3-10': '/images/rt3-10.png',
@@ -26,20 +13,10 @@ const productImages: Record<string, string> = {
   'GV-1': '/images/gv1.png',
 }
 
-export default function ProductCard({
-  name,
-  category,
-  visualIndex,
-  productId,
-  contents,
-  price,
-  variants,
-}: ProductCardProps) {
+export default function ProductCard({ name, category, productId, contents, price, variants }: ProductCardProps) {
   const [selectedId, setSelectedId] = useState(productId)
-  const selected = useMemo(
-    () => variants?.find((variant) => variant.id === selectedId) ?? { id: productId, contents, price },
-    [variants, selectedId, productId, contents, price],
-  )
+  const hasVariants = Boolean(variants && variants.length > 1)
+  const selected = useMemo(() => variants?.find((variant) => variant.id === selectedId) ?? { id: productId, contents, price }, [variants, selectedId, productId, contents, price])
   const image = productImages[selected.id] ?? productImages[productId]
 
   return (
@@ -52,31 +29,18 @@ export default function ProductCard({
         <div className="product-copy">
           <h3>{name}</h3>
           <p>{category}</p>
-          {variants ? (
+          {hasVariants ? (
             <label className="size-select-label">
               <span className="sr-only">Select vial size for {name}</span>
-              <select
-                value={selected.id}
-                onChange={(event) => setSelectedId(event.target.value)}
-                onClick={(event) => event.stopPropagation()}
-                aria-label={`Select vial size for ${name}`}
-              >
-                {variants.map((variant) => (
-                  <option value={variant.id} key={variant.id}>{variant.contents}</option>
-                ))}
+              <select value={selected.id} onChange={(event) => setSelectedId(event.target.value)} onClick={(event) => event.stopPropagation()} aria-label={`Select vial size for ${name}`}>
+                {variants!.map((variant) => <option value={variant.id} key={variant.id}>{variant.contents}</option>)}
               </select>
             </label>
-          ) : (
-            <p className="product-contents">{selected.contents}</p>
-          )}
+          ) : <p className="product-contents">{selected.contents}</p>}
         </div>
         <strong>${selected.price}</strong>
       </div>
-      {variants && (
-        <a className="product-card-link" href={`/products/${selected.id}`}>
-          View {selected.contents} <span>↗</span>
-        </a>
-      )}
+      {hasVariants && <a className="product-card-link" href={`/products/${selected.id}`}>View {selected.contents} <span>↗</span></a>}
     </article>
   )
 }
