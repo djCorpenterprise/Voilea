@@ -1,0 +1,51 @@
+/* VOIÉLA editorial refinement layer */
+.hero-editorial {
+  min-height: 560px;
+  aspect-ratio: 1.42 / 1;
+  background: #e8e1d8;
+  border: 1px solid #ded7ce;
+}
+.hero-editorial::before { display: none; }
+.hero-editorial-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.hero-editorial .art-label { display: none; }
+
+.product-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+.product-visual {
+  height: 350px;
+  background: #e7e0d8;
+}
+.product-editorial-image {
+  object-fit: cover;
+  object-position: center;
+}
+.product-visual::after { display: none; }
+.product-meta { padding-top: 14px; }
+.product-meta h3 { font-size: 19px; }
+.product-meta > strong { font-size: 17px; }
+.product-copy { min-width: 0; }
+.product-contents { line-height: 1.5; max-width: 220px; }
+.product-card-link { margin-top: 12px; }
+
+.collection { padding-top: 92px; }
+.section-head { margin-bottom: 30px; }
+.section-head h2 { font-size: clamp(38px, 4vw, 50px); }
+
+.hero-copy { padding-right: 8px; }
+.hero-copy > p { max-width: 500px; }
+
+@media (max-width: 1120px) {
+  .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .hero-editorial { min-height: 390px; aspect-ratio: auto; }
+  .product-grid { grid-template-columns: 1fr; gap: 34px; }
+  .product-visual { height: 390px; }
+}
