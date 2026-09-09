@@ -1,6 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
+
+type Variant = {
+  id: string
+  contents: string
+  price: number
+}
 
 type ProductCardProps = {
   name: string
@@ -9,41 +15,70 @@ type ProductCardProps = {
   productId: string
   contents: string
   price: number
+  variants?: Variant[]
 }
 
-const imageByProduct: Record<string, string> = {
-  'RT-3-10': '/images/rt3-10.png',
-  'TRZ-2-10': '/images/trz2-10.png',
+const productImages: Record<string, string> = {
+  'RT-3-10': '/images/rt3.webp',
+  'RT-3-20': '/images/rt3.webp',
+  'TRZ-2-10': '/images/trz2.webp',
+  'TRZ-2-20': '/images/trz2.webp',
   'NAD-1-500': '/images/nad1.png',
   'GHK-1-50': '/images/ghk1.png',
   'GV-1': '/images/gv1.png',
 }
 
-export default function ProductCard({ name, category, productId, contents, price }: ProductCardProps) {
-  const [imageError, setImageError] = useState(false)
-  const image = imageByProduct[productId]
+export default function ProductCard({
+  name,
+  category,
+  visualIndex,
+  productId,
+  contents,
+  price,
+  variants,
+}: ProductCardProps) {
+  const [selectedId, setSelectedId] = useState(productId)
+  const selected = useMemo(
+    () => variants?.find((variant) => variant.id === selectedId) ?? { id: productId, contents, price },
+    [variants, selectedId, productId, contents, price],
+  )
+  const image = productImages[selected.id] ?? productImages[productId]
 
   return (
     <div className="product-card">
-      <a href={`/products/${productId}`} className="product-visual product-photo" aria-label={`View ${name}`}>
-        {image && !imageError ? (
-          <img src={image} alt={`${name} ${contents} research material`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={() => setImageError(true)} />
-        ) : (
-          <div className="vial-art" aria-hidden="true">
-            <div className="vial-cap" />
-            <div className="vial-body"><div className="vial-label"><span>VOIÉLA</span><strong>{productId.split('-').slice(0, 2).join('-')}</strong><small>RESEARCH USE ONLY</small></div></div>
-          </div>
-        )}
+      <a href={`/products/${selected.id}`} className="product-visual editorial-visual" aria-label={`View ${name}`}>
+        <img src={image} alt={`${name} research material`} className="product-editorial-image" />
         <small className="visual-ruo">RUO</small>
       </a>
       <div className="product-meta">
         <div>
           <h3>{name}</h3>
           <p>{category}</p>
-          <p className="product-contents">{contents}</p>
+          {variants ? (
+            <label className="size-select-label">
+              <span className="sr-only">Select vial size for {name}</span>
+              <select
+                value={selected.id}
+                onChange={(event) => setSelectedId(event.target.value)}
+                onClick={(event) => event.stopPropagation()}
+                aria-label={`Select vial size for ${name}`}
+              >
+                {variants.map((variant) => (
+                  <option value={variant.id} key={variant.id}>{variant.contents}</option>
+                ))}
+              </select>
+            </label>
+          ) : (
+            <p className="product-contents">{selected.contents}</p>
+          )}
         </div>
-        <strong>${price}</strong>
+        <strong>${selected.price}</strong>
       </div>
+      {variants && (
+        <a className="product-card-link" href={`/products/${selected.id}`}>
+          View {selected.contents} <span>↗</span>
+        </a>
+      )}
     </div>
   )
 }
