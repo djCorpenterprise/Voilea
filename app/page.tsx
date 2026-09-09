@@ -1,23 +1,29 @@
 import ProductCard from '@/components/ProductCard'
 import { products } from '@/lib/products'
 
-const retatrutide = products.filter((p) => p.id.startsWith('RT-3'))
-const displayProducts = products.filter((p) => !p.id.startsWith('RT-3'))
-
 export default function Home() {
   return <>
     <div className="topbar">RESEARCH USE ONLY <span>•</span> NOT FOR HUMAN OR VETERINARY USE</div>
     <header className="site-header wrap"><a className="brand" href="/">VOIÉLA</a><nav className="links" aria-label="Primary navigation"><a href="/shop">Shop</a><a href="/faq">FAQ</a><a href="/policies">Policies</a><a href="/checkout">Cart</a></nav></header>
+
     <main>
-      <section className="hero wrap">
-        <div className="hero-copy"><div className="eyebrow">Research materials · Est. 2026</div><h1>Research,<br/><em>refined.</em></h1><p>VOIÉLA presents laboratory research materials with clear specifications, careful presentation, and a straightforward research-only standard.</p><div className="hero-actions"><a className="button" href="/shop">Explore materials</a></div></div>
-        <div className="hero-art hero-editorial" aria-hidden="true"><img src="/images/hero.png?v=2" alt="" className="hero-editorial-image" /></div>
+      <section className="luxury-hero">
+        <img src="/images/hero.png?v=3" alt="VOIÉLA research material editorial presentation" />
+        <div className="luxury-hero-overlay"><div className="eyebrow">Research materials</div><h1>A Higher<br/><em>Standard.</em></h1><div className="luxury-hero-rule"/><p>Purposeful research.<br/>Thoughtful presentation.</p><a className="button button-light" href="/shop">Shop collection</a></div>
+        <div className="luxury-hero-side">VOIÉLA<br/><span>RESEARCH<br/>PURPOSE<br/>PROGRESS</span></div>
       </section>
-      <section className="compliance wrap"><div><strong>01</strong><span>Research standard</span></div><div><strong>02</strong><span>Clear specifications</span></div><div><strong>03</strong><span>Straightforward documentation</span></div></section>
-      <section className="collection wrap"><div className="section-head"><div><div className="eyebrow">The collection</div><h2>Research materials</h2></div><a className="text-link" href="/shop">View all <span>→</span></a></div><div className="product-grid"><ProductCard name="GLP-3" category="Research Material" visualIndex={1} productId={retatrutide[0].id} contents={retatrutide[0].contents} price={retatrutide[0].price} variants={retatrutide.map(({ id, contents, price }) => ({ id, contents, price }))} />{displayProducts.map((p, i) => <ProductCard key={p.id} name={p.name} category={p.category} visualIndex={(i % 5) + 2} productId={p.id} contents={p.contents} price={p.price} />)}</div></section>
-      <section className="editorial-feature wrap"><div className="editorial-feature-image"><img src="/images/ghk1.png" alt="VOIÉLA research material" /></div><div className="editorial-feature-copy"><div className="eyebrow">The VOIÉLA standard</div><h2>Quietly<br/><em>considered.</em></h2><p>A focused collection, restrained presentation, and specifications that stay easy to read. The visual language is intentionally soft, editorial, and precise.</p><a className="text-link" href="/shop">Explore the collection <span>↗</span></a></div></section>
-      <section className="final-notice wrap"><strong>IMPORTANT RESEARCH-USE NOTICE</strong><p>All products are sold strictly for laboratory research use only. Not for human or veterinary consumption or administration. Not intended to diagnose, treat, cure, prevent, or mitigate disease. Buyers are responsible for ensuring intended use complies with applicable laws and regulations.</p></section>
+
+      <section className="standards wrap"><div><strong>01</strong><div><span>Research standard</span><small>Focused materials, clearly presented</small></div></div><div><strong>02</strong><div><span>Clear specifications</span><small>Product details kept easy to read</small></div></div><div><strong>03</strong><div><span>Thoughtful presentation</span><small>A considered, restrained collection</small></div></div></section>
+
+      <section className="luxury-feature wrap"><div className="luxury-feature-image"><img src="/images/nad1.png" alt="VOIÉLA research material" /></div><div className="luxury-feature-copy"><div className="eyebrow">The details matter</div><h2>Precision<br/><em>in every detail.</em></h2><p>A focused catalog with clean specifications and a visual language designed around restraint, clarity, and consistency.</p><a className="text-link" href="/shop">Explore the collection <span>→</span></a></div></section>
+
+      <section className="collection wrap"><div className="section-head"><div><div className="eyebrow">Research materials</div><h2>Our collection</h2></div><a className="text-link" href="/shop">View all <span>→</span></a></div><div className="product-grid">{products.map((p, i) => <ProductCard key={p.id} name={p.name} category={p.category} visualIndex={(i % 5) + 1} productId={p.id} contents={p.contents} price={p.price} />)}</div></section>
+
+      <section className="luxury-closing"><img src="/images/gv1.png" alt="VOIÉLA research material editorial presentation" /><div className="luxury-closing-copy"><div className="eyebrow">A more considered approach</div><h2>Science.<br/><em>Presented beautifully.</em></h2><a className="button button-light" href="/shop">Shop all</a></div></section>
+
+      <section className="final-notice wrap"><strong>RESEARCH-USE-ONLY NOTICE</strong><p>All products are sold strictly for laboratory research use only. Not for human or veterinary consumption or administration. No dosing, administration, or personal-use guidance is provided.</p></section>
     </main>
+
     <footer className="footer"><div className="wrap footer-grid"><div><div className="brand">VOIÉLA</div><p>Research materials, presented clearly.</p></div><div className="footer-links"><a href="/shop">Shop</a><a href="/faq">FAQ</a><a href="/policies">Policies</a><a href="/checkout">Cart</a></div><div className="footer-note">RESEARCH USE ONLY.<br/>NOT FOR HUMAN OR VETERINARY USE.<br/><br/>© 2026 VOIÉLA</div></div></footer>
   </>
 }
