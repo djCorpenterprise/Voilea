@@ -7,15 +7,9 @@ const displayProducts = products.filter((p) => !p.id.startsWith('RT-3'))
 export default function Shop() {
   return <>
     <div className="topbar">RESEARCH USE ONLY <span>•</span> NOT FOR HUMAN OR VETERINARY USE</div>
-    <header className="site-header wrap">
-      <a className="brand" href="/">VOIÉLA</a>
-      <nav className="links" aria-label="Primary navigation">
-        <a href="/shop">Shop</a><a href="/about">Our standard</a><a href="/faq">FAQ</a><a href="/checkout">Cart</a>
-      </nav>
-    </header>
+    <header className="site-header wrap"><a className="brand" href="/">VOIÉLA</a><nav className="links" aria-label="Primary navigation"><a href="/shop">Shop</a><a href="/science">Our science</a><a href="/story">Our story</a><a href="/journal">Journal</a><a href="/checkout">Cart</a></nav></header>
     <main className="wrap page">
-      <div className="eyebrow">The collection</div>
-      <h1 className="page-title">Research materials</h1>
+      <div className="eyebrow">The collection</div><h1 className="page-title">Research materials</h1>
       <p className="page-intro">A focused collection of laboratory research materials. Each listing is presented with neutral specifications and is intended strictly for research use only.</p>
       <div className="product-grid shop-grid">
         <ProductCard name="Retatrutide" category="Research Material" visualIndex={1} productId={retatrutide[0].id} contents={retatrutide[0].contents} price={retatrutide[0].price} variants={retatrutide.map(({ id, contents, price }) => ({ id, contents, price }))} />
