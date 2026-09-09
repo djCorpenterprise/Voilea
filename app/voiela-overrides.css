@@ -19,12 +19,13 @@
   gap: 18px;
 }
 .product-visual {
-  height: 350px;
+  height: auto;
+  aspect-ratio: 4 / 5;
   background: #e7e0d8;
 }
 .product-editorial-image {
   object-fit: cover;
-  object-position: center;
+  object-position: 57% center;
 }
 .product-visual::after { display: none; }
 .product-meta { padding-top: 14px; }
@@ -47,5 +48,5 @@
 @media (max-width: 760px) {
   .hero-editorial { min-height: 390px; aspect-ratio: auto; }
   .product-grid { grid-template-columns: 1fr; gap: 34px; }
-  .product-visual { height: 390px; }
+  .product-visual { aspect-ratio: 4 / 5; }
 }
