@@ -1,7 +1,7 @@
 import { products } from '@/lib/products'
 
 const imageByProduct: Record<string, string> = {
-  'RT-3-10': '/images/rt3-10.png',
+  'RT-3-10': '/images/glp3-10.png',
   'TRZ-2-10': '/images/trz2-10.png',
   'NAD-1-500': '/images/nad1.png',
   'GHK-1-50': '/images/ghk1.png',
