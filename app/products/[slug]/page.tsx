@@ -1,8 +1,11 @@
+import ProductPurchaseOptions from '@/components/ProductPurchaseOptions'
 import { products } from '@/lib/products'
 
 const imageByProduct: Record<string, string> = {
   'RT-3-10': '/images/glp3-10.png',
+  'RT-3-20': '/images/glp3-10.png',
   'TRZ-2-10': '/images/trz2-10.png',
+  'TRZ-2-20': '/images/trz2-10.png',
   'NAD-1-500': '/images/nad1.png',
   'GHK-1-50': '/images/ghk1.png',
   'GV-1': '/images/gv1.png',
@@ -10,7 +13,9 @@ const imageByProduct: Record<string, string> = {
 
 const displayCodeByProduct: Record<string, string> = {
   'RT-3-10': 'GLP-3',
+  'RT-3-20': 'GLP-3',
   'TRZ-2-10': 'TZ-2',
+  'TRZ-2-20': 'TZ-2',
   'NAD-1-500': 'NAD-1',
   'GHK-1-50': 'GHK-1',
   'GV-1': 'GV-1',
@@ -36,8 +41,9 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
           <div className="eyebrow">{product.category}</div><h1>{displayCode}</h1>
           <p className="lead">{product.description}</p>
           <div className="spec-list"><div><span>Identifier</span><strong>{product.id}</strong></div><div><span>Contents</span><strong>{product.contents}</strong></div><div><span>Price</span><strong>${product.price}</strong></div></div>
-          <div className="product-rule"/><p className="ruo"><strong>RESEARCH USE ONLY</strong><br/>Not for human or veterinary use. No dosing, administration, consumption, or personal-use guidance is provided.</p>
-          <button className="button" disabled>Purchase — Coming soon</button>
+          <div className="product-rule"/>
+          <ProductPurchaseOptions productId={product.id} displayCode={displayCode} variants={product.variants} contents={product.contents} price={product.price} />
+          <p className="ruo"><strong>RESEARCH USE ONLY</strong><br/>Not for human or veterinary use. No dosing, administration, consumption, or personal-use guidance is provided.</p>
         </div>
       </div>
       <div className="final-notice"><strong>IMPORTANT</strong><p>This listing is for laboratory research purposes only. It is not food, a supplement, a treatment, or a medical product, and it is not intended for human or veterinary use.</p></div>
