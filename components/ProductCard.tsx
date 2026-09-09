@@ -1,13 +1,15 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import type { Variant } from '@/lib/products'
 
-type Variant = { id: string; contents: string; price: number }
 type ProductCardProps = { name: string; category: string; visualIndex: number; productId: string; contents: string; price: number; variants?: Variant[] }
 
 const productImages: Record<string, string> = {
   'RT-3-10': '/images/glp3-10.png',
+  'RT-3-20': '/images/glp3-10.png',
   'TRZ-2-10': '/images/trz2-10.png',
+  'TRZ-2-20': '/images/trz2-10.png',
   'NAD-1-500': '/images/nad1.png',
   'GHK-1-50': '/images/ghk1.png',
   'GV-1': '/images/gv1.png',
@@ -15,7 +17,9 @@ const productImages: Record<string, string> = {
 
 const displayCodeByProduct: Record<string, string> = {
   'RT-3-10': 'GLP-3',
+  'RT-3-20': 'GLP-3',
   'TRZ-2-10': 'TZ-2',
+  'TRZ-2-20': 'TZ-2',
   'NAD-1-500': 'NAD-1',
   'GHK-1-50': 'GHK-1',
   'GV-1': 'GV-1',
@@ -27,7 +31,7 @@ export default function ProductCard({ name, category, productId, contents, price
   const selected = useMemo(() => variants?.find((variant) => variant.id === selectedId) ?? { id: productId, contents, price }, [variants, selectedId, productId, contents, price])
   const image = productImages[selected.id] ?? productImages[productId]
   const displayCode = displayCodeByProduct[selected.id] ?? displayCodeByProduct[productId] ?? selected.id
-  const hideChemicalName = selected.id === 'RT-3-10' || selected.id === 'TRZ-2-10'
+  const hideChemicalName = displayCode === 'GLP-3' || displayCode === 'TZ-2'
 
   return (
     <article className="product-card">
