@@ -8,3 +8,24 @@
 .product-card:hover .product-editorial-image{transform:scale(1.025)}
 .editorial-visual:after{z-index:1;pointer-events:none}
 @media(max-width:760px){.hero-editorial{min-height:400px}.product-editorial-image{object-position:center}}
+
+/* Homepage editorial refinement */
+.hero{grid-template-columns:.92fr 1.08fr;gap:54px;min-height:700px;padding-top:62px;padding-bottom:86px}
+.hero-copy{padding-left:10px}
+.hero h1{font-size:clamp(62px,7.5vw,104px);line-height:.9;letter-spacing:-.025em;margin:20px 0 28px}
+.hero-copy>p{font-size:15px;max-width:500px}
+.hero-art{min-height:550px;border:1px solid rgba(23,22,20,.08);border-radius:3px;box-shadow:0 24px 60px rgba(23,22,20,.08)}
+.hero-art:before{width:470px;height:470px;border-color:rgba(23,22,20,.1)}
+.hero-editorial-image{object-position:center;border-radius:3px}
+.compliance{background:rgba(255,255,255,.2);padding:20px 0}
+.compliance span{color:#625d56}
+.editorial-feature{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center;padding-top:10px;padding-bottom:120px}
+.editorial-feature-image{height:560px;overflow:hidden;background:#e7e0d8;border-radius:3px}
+.editorial-feature-image img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease}
+.editorial-feature:hover .editorial-feature-image img{transform:scale(1.02)}
+.editorial-feature-copy{max-width:470px;padding-right:20px}
+.editorial-feature-copy h2{font-family:Georgia,serif;font-size:clamp(48px,5.5vw,74px);font-weight:400;line-height:.95;letter-spacing:-.02em;margin:18px 0 26px}
+.editorial-feature-copy h2 em{font-weight:400}
+.editorial-feature-copy p{color:#625d56;line-height:1.85;font-size:14px;max-width:430px;margin-bottom:28px}
+.final-notice{padding-top:55px;padding-bottom:65px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;gap:34px;padding-top:48px}.hero-copy{padding-left:0}.hero-art{min-height:430px}.editorial-feature{grid-template-columns:1fr;gap:35px;padding-top:0;padding-bottom:80px}.editorial-feature-image{height:390px}.editorial-feature-copy{padding-right:0}.editorial-feature-copy h2{font-size:54px}}
