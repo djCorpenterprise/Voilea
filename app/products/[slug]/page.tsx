@@ -16,7 +16,12 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
 
   return <>
     <div className="topbar">RESEARCH USE ONLY <span>•</span> NOT FOR HUMAN OR VETERINARY USE</div>
-    <header className="site-header wrap"><a className="brand" href="/">VOIÉLA</a><nav className="links"><a href="/shop">Shop</a><a href="/about">About</a><a href="/faq">FAQ</a><a href="/checkout">Cart</a></nav></header>
+    <header className="site-header wrap">
+      <a className="brand" href="/">VOIÉLA</a>
+      <nav className="links" aria-label="Primary navigation">
+        <a href="/shop">Shop</a><a href="/about">Our standard</a><a href="/faq">FAQ</a><a href="/checkout">Cart</a>
+      </nav>
+    </header>
     <main className="wrap product-page">
       <div className="product-detail">
         <div className="product-visual product-photo detail-visual">
