@@ -8,9 +8,8 @@ export default function Home() {
 
     <main>
       <section className="luxury-hero">
-        <img src="/images/hero-new.png" alt="VOIÉLA research material editorial presentation" />
-        <div className="luxury-hero-overlay"><div className="eyebrow">Research materials</div><h1>A Higher<br/><em>Standard.</em></h1><div className="luxury-hero-rule"/><p>Purposeful research.<br/>Thoughtful presentation.</p><a className="button button-light" href="/shop">Shop collection</a></div>
-        <div className="luxury-hero-side">VOIÉLA<br/><span>RESEARCH<br/>PURPOSE<br/>PROGRESS</span></div>
+        <img src="/images/heronew1.png?v=1" alt="VOIÉLA research material editorial presentation" />
+        <div className="luxury-hero-overlay"><a className="button button-light" href="/shop">Shop collection</a></div>
       </section>
 
       <section className="standards wrap"><div><strong>01</strong><div><span>Research standard</span><small>Focused materials, clearly presented</small></div></div><div><strong>02</strong><div><span>Clear specifications</span><small>Product details kept easy to read</small></div></div><div><strong>03</strong><div><span>Thoughtful presentation</span><small>A considered, restrained collection</small></div></div></section>
