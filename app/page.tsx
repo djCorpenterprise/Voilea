@@ -15,7 +15,7 @@ export default function Home() {
         <div className="hero-art hero-editorial" aria-hidden="true"><img src="/images/hero.png?v=2" alt="" className="hero-editorial-image" /></div>
       </section>
 
-      <section className="compliance wrap"><div><strong>01</strong><span>Research use only</span></div><div><strong>02</strong><span>Clear specifications</span></div><div><strong>03</strong><span>No personal-use guidance</span></div></section>
+      <section className="compliance wrap"><div><strong>01</strong><span>Research standard</span></div><div><strong>02</strong><span>Clear specifications</span></div><div><strong>03</strong><span>Straightforward documentation</span></div></section>
       <section className="collection wrap"><div className="section-head"><div><div className="eyebrow">The collection</div><h2>Research materials</h2></div><a className="text-link" href="/shop">View all <span>→</span></a></div><div className="product-grid"><ProductCard name="Retatrutide" category="Research Material" visualIndex={1} productId={retatrutide[0].id} contents={retatrutide[0].contents} price={retatrutide[0].price} variants={retatrutide.map(({ id, contents, price }) => ({ id, contents, price }))} />{displayProducts.map((p, i) => <ProductCard key={p.id} name={p.name} category={p.category} visualIndex={(i % 5) + 2} productId={p.id} contents={p.contents} price={p.price} />)}</div></section>
 
       <section className="editorial-feature wrap">
