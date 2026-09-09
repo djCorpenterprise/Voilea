@@ -16,7 +16,7 @@ export default function Home() {
 
       <section className="luxury-feature wrap"><div className="luxury-feature-image"><img src="/images/detail-new.png" alt="VOIÉLA editorial research setting" /></div><div className="luxury-feature-copy"><div className="eyebrow">The details matter</div><h2>Precision<br/><em>in every detail.</em></h2><p>A focused catalog with clean specifications and a visual language designed around restraint, clarity, and consistency.</p><a className="text-link" href="/shop">Explore the collection <span>→</span></a></div></section>
 
-      <section className="collection wrap"><div className="section-head"><div><div className="eyebrow">Research materials</div><h2>Our collection</h2></div><a className="text-link" href="/shop">View all <span>→</span></a></div><div className="product-grid">{products.map((p, i) => <ProductCard key={p.id} name={p.name} category={p.category} visualIndex={(i % 5) + 1} productId={p.id} contents={p.contents} price={p.price} />)}</div></section>
+      <section className="collection wrap"><div className="section-head"><div><div className="eyebrow">Research materials</div><h2>Our collection</h2></div><a className="text-link" href="/shop">View all <span>→</span></a></div><div className="product-grid">{products.map((p, i) => <ProductCard key={p.id} name={p.name} category={p.category} visualIndex={(i % 5) + 1} productId={p.id} contents={p.contents} price={p.price} variants={p.variants} />)}</div></section>
 
       <section className="atmosphere-banner"><img src="/images/atmosphere-new.png" alt="VOIÉLA stone, glass, and botanical editorial setting" /><div className="atmosphere-copy"><div className="eyebrow">A more considered approach</div><h2>Quietly<br/><em>distinctive.</em></h2></div></section>
 
