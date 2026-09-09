@@ -22,11 +22,10 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
   const product = p ?? { id: slug, name: 'Research Material', category: 'Research Material' as const, contents: 'Specifications unavailable', price: 0, description: 'Product information unavailable.' }
   const image = imageByProduct[product.id]
   const displayCode = displayCodeByProduct[product.id] ?? product.id
-  const hideChemicalName = product.id === 'RT-3-10' || product.id === 'TRZ-2-10'
 
   return <>
     <div className="topbar">RESEARCH USE ONLY <span>•</span> NOT FOR HUMAN OR VETERINARY USE</div>
-    <header className="site-header wrap"><a className="brand" href="/">VOIÉLA</a><nav className="links" aria-label="Primary navigation"><a href="/shop">Shop</a><a href="/science">Our science</a><a href="/story">Our story</a><a href="/journal">Journal</a><a href="/checkout">Cart</a></nav></header>
+    <header className="site-header wrap"><a className="brand" href="/">VOIÉLA</a><nav className="links" aria-label="Primary navigation"><a href="/shop">Shop</a><a href="/faq">FAQ</a><a href="/policies">Policies</a><a href="/checkout">Cart</a></nav></header>
     <main className="wrap product-page">
       <div className="product-detail">
         <div className="product-visual product-photo detail-visual">
@@ -34,7 +33,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
           <small className="visual-ruo">RUO</small>
         </div>
         <div className="product-info">
-          <div className="eyebrow">{product.category}</div><h1>{displayCode}</h1>{!hideChemicalName && <p className="product-name">{product.name}</p>}
+          <div className="eyebrow">{product.category}</div><h1>{displayCode}</h1>
           <p className="lead">{product.description}</p>
           <div className="spec-list"><div><span>Identifier</span><strong>{product.id}</strong></div><div><span>Contents</span><strong>{product.contents}</strong></div><div><span>Price</span><strong>${product.price}</strong></div></div>
           <div className="product-rule"/><p className="ruo"><strong>RESEARCH USE ONLY</strong><br/>Not for human or veterinary use. No dosing, administration, consumption, or personal-use guidance is provided.</p>
