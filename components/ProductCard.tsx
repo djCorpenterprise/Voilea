@@ -19,10 +19,8 @@ type ProductCardProps = {
 }
 
 const productImages: Record<string, string> = {
-  'RT-3-10': '/images/rt3.webp',
-  'RT-3-20': '/images/rt3.webp',
-  'TRZ-2-10': '/images/trz2.webp',
-  'TRZ-2-20': '/images/trz2.webp',
+  'RT-3-10': '/images/rt3-10.png',
+  'TRZ-2-10': '/images/trz2-10.png',
   'NAD-1-500': '/images/nad1.png',
   'GHK-1-50': '/images/ghk1.png',
   'GV-1': '/images/gv1.png',
@@ -45,13 +43,13 @@ export default function ProductCard({
   const image = productImages[selected.id] ?? productImages[productId]
 
   return (
-    <div className="product-card">
+    <article className="product-card">
       <a href={`/products/${selected.id}`} className="product-visual editorial-visual" aria-label={`View ${name}`}>
         <img src={image} alt={`${name} research material`} className="product-editorial-image" />
         <small className="visual-ruo">RUO</small>
       </a>
       <div className="product-meta">
-        <div>
+        <div className="product-copy">
           <h3>{name}</h3>
           <p>{category}</p>
           {variants ? (
@@ -79,6 +77,6 @@ export default function ProductCard({
           View {selected.contents} <span>↗</span>
         </a>
       )}
-    </div>
+    </article>
   )
 }
