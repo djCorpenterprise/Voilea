@@ -6,7 +6,7 @@ type Variant = { id: string; contents: string; price: number }
 type ProductCardProps = { name: string; category: string; visualIndex: number; productId: string; contents: string; price: number; variants?: Variant[] }
 
 const productImages: Record<string, string> = {
-  'RT-3-10': '/images/rt3-10.png',
+  'RT-3-10': '/images/glp3-10.png',
   'TRZ-2-10': '/images/trz2-10.png',
   'NAD-1-500': '/images/nad1.png',
   'GHK-1-50': '/images/ghk1.png',
