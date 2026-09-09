@@ -1,4 +1,5 @@
 import './globals.css'
+import './voiela-overrides.css'
 
 export const metadata = {
   title: 'VOIÉLA — Research Materials',
