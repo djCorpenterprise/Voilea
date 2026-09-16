@@ -4,8 +4,8 @@ import ReferralCapture from '@/components/ReferralCapture'
 import AccessGate from '@/components/AccessGate'
 
 export const metadata = {
-  title: 'VOIÉLA — Research Materials',
-  description: 'VOIÉLA research materials and laboratory supplies.',
+  title: 'VOIÉLA — Inventory',
+  description: 'VOIÉLA — a considered inventory with clear specifications and documentation.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
