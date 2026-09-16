@@ -138,6 +138,17 @@
 .purchase-total strong { font-size: 18px; letter-spacing: 0; }
 .purchase-options .button[disabled] { opacity: .55; cursor: not-allowed; }
 
+/* Site entry confirmation */
+.access-gate{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(30,26,22,.58);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.access-gate-card{width:min(500px,100%);padding:48px;background:#f7f3ee;border:1px solid #ded7ce;box-shadow:0 24px 80px rgba(20,16,12,.24)}
+.access-gate-card h1{font-family:Georgia,serif;font-size:clamp(42px,6vw,62px);font-weight:400;line-height:.95;letter-spacing:-.025em;margin:18px 0 16px}
+.access-gate-intro{max-width:390px;color:#625d56;font-size:14px;line-height:1.7;margin:0 0 28px}
+.access-gate-check{display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-top:1px solid #d5cfc6;font-size:13px;line-height:1.6;cursor:pointer}
+.access-gate-check:last-of-type{border-bottom:1px solid #d5cfc6}
+.access-gate-check input{margin-top:4px;accent-color:#27231f}
+.access-gate-button{width:100%;margin-top:24px}
+.access-gate-button:disabled{opacity:.45;cursor:not-allowed}
+
 @media(max-width:760px){
   .luxury-hero{height:620px;min-height:0}
   .luxury-hero>img{object-position:58% center}
@@ -154,4 +165,6 @@
   .luxury-closing{height:430px}
   .luxury-closing-copy{left:20px;right:20px}
   .luxury-closing-copy h2{font-size:52px}
+  .access-gate{padding:16px}
+  .access-gate-card{padding:34px 24px}
 }
