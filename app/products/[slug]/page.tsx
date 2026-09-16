@@ -3,13 +3,13 @@ import { SiteFooter, SiteHeader } from '@/components/SiteChrome'
 import { products } from '@/lib/products'
 
 const imageByProduct: Record<string, string> = {
-  'RT-3-10': '/images/glp3-10.png',
-  'RT-3-20': '/images/glp3-10.png',
-  'TRZ-2-10': '/images/trz2-10.png',
-  'TRZ-2-20': '/images/trz2-10.png',
-  'NAD-1-500': '/images/nad1.png',
-  'GHK-1-50': '/images/ghk1.png',
-  'GV-1': '/images/gv1.png',
+  'RT-3-10': '/images/glp369.png',
+  'RT-3-20': '/images/glp369.png',
+  'TRZ-2-10': '/images/tz269.png',
+  'TRZ-2-20': '/images/tz269.png',
+  'NAD-1-500': '/images/nad169.png',
+  'GHK-1-50': '/images/ghk169.png',
+  'GV-1': '/images/gv169.png',
 }
 
 const displayCodeByProduct: Record<string, string> = {
