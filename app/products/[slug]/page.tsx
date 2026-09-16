@@ -1,4 +1,5 @@
 import ProductPurchaseOptions from '@/components/ProductPurchaseOptions'
+import { SiteFooter, SiteHeader } from '@/components/SiteChrome'
 import { products } from '@/lib/products'
 
 const imageByProduct: Record<string, string> = {
@@ -20,29 +21,39 @@ const displayCodeByProduct: Record<string, string> = {
 export default async function Product({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const baseProduct = products.find((product) => product.id === slug || product.variants?.some((variant) => variant.id === slug))
-  const product = baseProduct ?? { id: slug, name: 'Research Material', category: 'Research Material' as const, contents: 'Specifications unavailable', price: 0, description: 'Product information unavailable.' }
+  const product = baseProduct ?? { id: slug, name: 'Product', category: 'Research Material' as const, contents: 'Specifications unavailable', price: 0, description: 'Product information unavailable.' }
   const selectedVariant = product.variants?.find((variant) => variant.id === slug)
   const selectedId = selectedVariant?.id ?? product.id
   const selectedContents = selectedVariant?.contents ?? product.contents
   const selectedPrice = selectedVariant?.price ?? product.price
   const image = imageByProduct[selectedId]
   const displayCode = displayCodeByProduct[selectedId] ?? selectedId
+  const showName = displayCode !== 'GLP-3' && displayCode !== 'TZ-2'
 
-  return <>
-    <header className="site-header wrap"><a className="brand" href="/">VOIÉLA</a><nav className="links" aria-label="Primary navigation"><a href="/shop">Shop</a><a href="/faq">FAQ</a><a href="/policies">Policies</a><a href="/checkout">Cart</a></nav></header>
-    <main className="wrap product-page">
-      <div className="product-detail">
-        <div className="product-visual product-photo detail-visual">
-          {image ? <img src={image} alt={`${displayCode} research material ${selectedContents}`} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '57% center' }} /> : <div className="vial-art" aria-hidden="true"><div className="vial-cap"/><div className="vial-body"><div className="vial-label"><span>VOIÉLA</span><strong>{displayCode}</strong></div></div></div>}
+  return (
+    <>
+      <SiteHeader />
+      <main className="wrap product-page">
+        <div className="product-detail">
+          <div className="product-visual product-photo detail-visual">
+            {image ? <img src={image} alt={`${displayCode} product presentation`} /> : <div className="vial-art" aria-hidden="true"><div className="vial-cap" /><div className="vial-body"><div className="vial-label"><span>VOIÉLA</span><strong>{displayCode}</strong></div></div></div>}
+          </div>
+          <div className="product-info">
+            <div className="eyebrow">Inventory</div>
+            <h1>{displayCode}</h1>
+            {showName && <p className="product-name">{product.name}</p>}
+            <p className="lead">{product.description}</p>
+            <div className="spec-list">
+              <div><span>Identifier</span><strong>{selectedId}</strong></div>
+              <div><span>Contents</span><strong>{selectedContents}</strong></div>
+              <div><span>Price</span><strong>${selectedPrice}</strong></div>
+            </div>
+            <div className="product-rule" />
+            <ProductPurchaseOptions productId={selectedId} displayCode={displayCode} variants={product.variants} contents={selectedContents} price={selectedPrice} />
+          </div>
         </div>
-        <div className="product-info">
-          <div className="eyebrow">{product.category}</div><h1>{displayCode}</h1>
-          <p className="lead">{product.description}</p>
-          <div className="spec-list"><div><span>Identifier</span><strong>{selectedId}</strong></div><div><span>Contents</span><strong>{selectedContents}</strong></div><div><span>Price</span><strong>${selectedPrice}</strong></div></div>
-          <div className="product-rule"/>
-          <ProductPurchaseOptions productId={selectedId} displayCode={displayCode} variants={product.variants} contents={selectedContents} price={selectedPrice} />
-        </div>
-      </div>
-    </main>
-  </>
+      </main>
+      <SiteFooter />
+    </>
+  )
 }
