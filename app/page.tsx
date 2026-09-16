@@ -58,11 +58,6 @@ export default function Home() {
             <a className="text-link" href="/shop">Explore the inventory <span>↗</span></a>
           </div>
         </section>
-
-        <section className="luxury-closing">
-          <img src="/images/gv169.png" alt="VOIÉLA research blend editorial presentation" />
-          <div className="luxury-closing-copy"><div className="eyebrow">VOIÉLA</div><h2>Science.<br /><em>Presented beautifully.</em></h2><a className="button button-light" href="/shop">Shop the collection <span>→</span></a></div>
-        </section>
       </main>
       <SiteFooter />
     </>
