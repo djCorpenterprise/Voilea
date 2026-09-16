@@ -29,7 +29,6 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
   const displayCode = displayCodeByProduct[selectedId] ?? selectedId
 
   return <>
-    <div className="topbar">RESEARCH USE ONLY <span>•</span> NOT FOR HUMAN OR VETERINARY USE</div>
     <header className="site-header wrap"><a className="brand" href="/">VOIÉLA</a><nav className="links" aria-label="Primary navigation"><a href="/shop">Shop</a><a href="/faq">FAQ</a><a href="/policies">Policies</a><a href="/checkout">Cart</a></nav></header>
     <main className="wrap product-page">
       <div className="product-detail">
@@ -43,10 +42,8 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
           <div className="spec-list"><div><span>Identifier</span><strong>{selectedId}</strong></div><div><span>Contents</span><strong>{selectedContents}</strong></div><div><span>Price</span><strong>${selectedPrice}</strong></div></div>
           <div className="product-rule"/>
           <ProductPurchaseOptions productId={selectedId} displayCode={displayCode} variants={product.variants} contents={selectedContents} price={selectedPrice} />
-          <p className="ruo"><strong>RESEARCH USE ONLY</strong><br/>Not for human or veterinary use. No dosing, administration, consumption, or personal-use guidance is provided.</p>
         </div>
       </div>
-      <div className="final-notice"><strong>IMPORTANT</strong><p>This listing is for laboratory research purposes only. It is not food, a supplement, a treatment, or a medical product, and it is not intended for human or veterinary use.</p></div>
     </main>
   </>
 }
