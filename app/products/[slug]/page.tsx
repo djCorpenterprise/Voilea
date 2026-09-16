@@ -33,8 +33,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
     <main className="wrap product-page">
       <div className="product-detail">
         <div className="product-visual product-photo detail-visual">
-          {image ? <img src={image} alt={`${displayCode} research material ${selectedContents}`} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '57% center' }} /> : <div className="vial-art" aria-hidden="true"><div className="vial-cap"/><div className="vial-body"><div className="vial-label"><span>VOIÉLA</span><strong>{displayCode}</strong><small>RESEARCH USE ONLY</small></div></div></div>}
-          <small className="visual-ruo">RUO</small>
+          {image ? <img src={image} alt={`${displayCode} research material ${selectedContents}`} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '57% center' }} /> : <div className="vial-art" aria-hidden="true"><div className="vial-cap"/><div className="vial-body"><div className="vial-label"><span>VOIÉLA</span><strong>{displayCode}</strong></div></div></div>}
         </div>
         <div className="product-info">
           <div className="eyebrow">{product.category}</div><h1>{displayCode}</h1>
