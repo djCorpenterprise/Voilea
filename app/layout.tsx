@@ -1,5 +1,6 @@
 import './globals.css'
 import './voiela-overrides.css'
+import ReferralCapture from '@/components/ReferralCapture'
 
 export const metadata = {
   title: 'VOIÉLA — Research Materials',
@@ -7,5 +8,5 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en"><body>{children}</body></html>
+  return <html lang="en"><body><ReferralCapture />{children}</body></html>
 }
