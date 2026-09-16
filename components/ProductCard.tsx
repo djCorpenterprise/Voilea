@@ -35,9 +35,8 @@ export default function ProductCard({ name, category, productId, contents, price
 
   return (
     <article className="product-card">
-      <a href={`/products/${selected.id}`} className="product-visual editorial-visual" aria-label={`View ${displayCode} — research material`}>
+      <a href={`/products/${selected.id}`} className="product-visual editorial-visual" aria-label={`View ${displayCode} research material`}>
         <img src={image} alt={`${displayCode} research material`} className="product-editorial-image" />
-        <small className="visual-ruo">RUO</small>
       </a>
       <div className="product-meta">
         <div className="product-copy">
