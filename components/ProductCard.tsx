@@ -6,13 +6,13 @@ import type { Variant } from '@/lib/products'
 type ProductCardProps = { name: string; category: string; visualIndex: number; productId: string; contents: string; price: number; variants?: Variant[] }
 
 const productImages: Record<string, string> = {
-  'RT-3-10': '/images/glp3-10.png',
-  'RT-3-20': '/images/glp3-10.png',
-  'TRZ-2-10': '/images/trz2-10.png',
-  'TRZ-2-20': '/images/trz2-10.png',
-  'NAD-1-500': '/images/nad1.png',
-  'GHK-1-50': '/images/ghk1.png',
-  'GV-1': '/images/gv1.png',
+  'RT-3-10': '/images/glp369.png',
+  'RT-3-20': '/images/glp369.png',
+  'TRZ-2-10': '/images/tz269.png',
+  'TRZ-2-20': '/images/tz269.png',
+  'NAD-1-500': '/images/nad169.png',
+  'GHK-1-50': '/images/ghk169.png',
+  'GV-1': '/images/gv169.png',
 }
 
 const displayCodeByProduct: Record<string, string> = {
@@ -35,8 +35,8 @@ export default function ProductCard({ name, category, productId, contents, price
 
   return (
     <article className="product-card">
-      <a href={`/products/${selected.id}`} className="product-visual editorial-visual" aria-label={`View ${displayCode} research material`}>
-        <img src={image} alt={`${displayCode} research material`} className="product-editorial-image" />
+      <a href={`/products/${selected.id}`} className="product-visual editorial-visual" aria-label={`View ${displayCode} inventory item`}>
+        <img src={image} alt={`${displayCode} product presentation`} className="product-editorial-image" />
       </a>
       <div className="product-meta">
         <div className="product-copy">
