@@ -42,7 +42,6 @@ export default function ProductCard({ name, category, productId, contents, price
         <div className="product-copy">
           <h3>{displayCode}</h3>
           {!hideChemicalName && <p className="product-name-card">{name}</p>}
-          <p>{category}</p>
           {hasVariants ? (
             <label className="size-select-label">
               <span className="sr-only">Select vial size for {displayCode}</span>
