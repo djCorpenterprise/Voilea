@@ -9,8 +9,8 @@ export default function Shop() {
   return <>
     <header className="site-header wrap"><a className="brand" href="/">VOIÉLA</a><nav className="links" aria-label="Primary navigation"><a href="/shop">Shop</a><a href="/faq">FAQ</a><a href="/policies">Policies</a><a href="/checkout">Cart</a></nav></header>
     <main className="wrap page">
-      <div className="eyebrow">The collection</div><h1 className="page-title">The collection</h1>
-      <p className="page-intro">A focused collection, presented with neutral specifications and clear identifiers.</p>
+      <div className="eyebrow">Inventory</div><h1 className="page-title">The collection.</h1>
+      <p className="page-intro">A focused collection, presented with clean specifications and clear identifiers.</p>
       <div className="product-grid shop-grid">
         <ProductCard name="GLP-3" category="Research Material" visualIndex={1} productId={retatrutide.id} contents={retatrutide.contents} price={retatrutide.price} variants={retatrutide.variants} />
         <ProductCard name="TZ-2" category="Research Material" visualIndex={2} productId={tirzepatide.id} contents={tirzepatide.contents} price={tirzepatide.price} variants={tirzepatide.variants} />
