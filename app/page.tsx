@@ -8,7 +8,7 @@ export default function Home() {
       <SiteHeader />
       <main>
         <section className="luxury-hero">
-          <img src="/images/heronew1.png?v=3" alt="VOIÉLA editorial product presentation" />
+          <img src="/images/hero69.png" alt="VOIÉLA editorial product presentation" />
           <div className="luxury-hero-overlay">
             <div className="eyebrow">A considered approach</div>
             <h1>Research,<br /><em>beautifully</em><br />considered.</h1>
@@ -25,7 +25,7 @@ export default function Home() {
         </section>
 
         <section className="luxury-feature wrap">
-          <div className="luxury-feature-image"><img src="/images/nad1.png" alt="VOIÉLA NAD-1 product presentation" /></div>
+          <div className="luxury-feature-image"><img src="/images/nad169.png" alt="VOIÉLA NAD-1 product presentation" /></div>
           <div className="luxury-feature-copy">
             <div className="eyebrow">The VOIÉLA approach</div>
             <h2>Precision<br /><em>in every detail.</em></h2>
@@ -45,12 +45,12 @@ export default function Home() {
         </section>
 
         <section className="atmosphere-banner">
-          <img src="/images/hero.png" alt="VOIÉLA sculptural stone editorial setting" />
+          <img src="/images/hero69.png" alt="VOIÉLA sculptural stone editorial setting" />
           <div className="atmosphere-copy"><div className="eyebrow">Science × aesthetics</div><h2>Where science<br /><em>meets beauty.</em></h2></div>
         </section>
 
         <section className="luxury-feature luxury-feature-reverse wrap">
-          <div className="luxury-feature-image"><img src="/images/ghk1.png" alt="VOIÉLA GHK-1 product presentation" /></div>
+          <div className="luxury-feature-image"><img src="/images/ghk169.png" alt="VOIÉLA GHK-1 product presentation" /></div>
           <div className="luxury-feature-copy">
             <div className="eyebrow">VOIÉLA</div>
             <h2>Considered<br /><em>from every angle.</em></h2>
@@ -60,7 +60,7 @@ export default function Home() {
         </section>
 
         <section className="luxury-closing">
-          <img src="/images/gv1.png" alt="VOIÉLA research blend editorial presentation" />
+          <img src="/images/gv169.png" alt="VOIÉLA research blend editorial presentation" />
           <div className="luxury-closing-copy"><div className="eyebrow">VOIÉLA</div><h2>Science.<br /><em>Presented beautifully.</em></h2><a className="button button-light" href="/shop">Shop the collection <span>→</span></a></div>
         </section>
       </main>
