@@ -45,7 +45,7 @@ export default function Home() {
         </section>
 
         <section className="atmosphere-banner">
-          <img src="/images/hero69.png" alt="VOIÉLA sculptural stone editorial setting" />
+          <img src="/images/footer69.png" alt="VOIÉLA beauty editorial setting" />
           <div className="atmosphere-copy"><div className="eyebrow">Science × aesthetics</div><h2>Where science<br /><em>meets beauty.</em></h2></div>
         </section>
 
